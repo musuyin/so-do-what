@@ -1,0 +1,36 @@
+name: so_do_what
+description: 离线、免费、无广告的随机事件选择器。
+publish_to: none
+version: 0.1.0+1
+environment:
+  sdk: ^3.13.5
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+  sqflite: ^2.4.6
+  path: ^1.9.1
+  uuid: ^4.6.0
+  characters: ^1.4.1
+  unorm_dart: ^0.3.3
+  file_picker: ^13.3.3
+  audioplayers: ^6.8.1
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  integration_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+  sqflite_common_ffi: ^2.4.7
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/sounds/
+# Host-side SQLite FFI tests use the operating system library; production uses sqflite.
+hooks:
+  user_defines:
+    sqlite3:
+      source: system
+      name_windows: winsqlite3
+      name: sqlite3
